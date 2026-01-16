@@ -1,27 +1,17 @@
-# Aukční systém - Návrhový vzor Observer
+# Aukční Systém
 
-Tento projekt implementuje jádro aukčního systému s využitím návrhového vzoru **Observer** (Pozorovatel).
+## Architektura a Návrhový Vzor
 
-## Proč byl zvolen tento přístup?
+### Zvolený přístup
+Pro splnění požadavků na nezávislost předmětu aukce (`AuctionItem`) a jednotlivých zájemců (`Bidder`) byl zvolen přístup založený na **rozhraních (Interfaces)**. Tento přístup zajišťuje:
 
-Zadání vyžadovalo, aby předmět aukce (dražená věc) nebyl závislý na konkrétních třídách zájemců a aby bylo možné přidávat nebo odebírat odběratele notifikací za běhu bez úpravy kódu předmětu.
+*   **Nezávislost (Decoupling):** Předmět nezná konkrétní implementaci zájemců, komunikuje s nimi výhradně přes rozhraní `IObserver`.
+*   **Flexibilitu:** Nové typy zájemců (např. automatické logování, mobilní notifikace) lze přidat bez nutnosti upravovat kód předmětu.
+*   **Dynamickou správu:** Zájemci se mohou přihlašovat a odhlašovat kdykoliv během běhu aplikace.
 
-Tento přístup byl zvolen z následujících důvodů:
-- **Volná vazba (Loose Coupling):** Předmět (`AuctionItem`) komunikuje se zájemci pouze přes obecné rozhraní `IAuctionObserver`. Nezná konkrétní třídu `Bidder`.
-- **Dynamičnost:** Seznam odběratelů není fixní. Zájemci se mohou kdykoliv přihlásit (`Attach`) nebo odhlásit (`Detach`).
-- **Princip OCP (Open/Closed Principle):** Systém je otevřený pro rozšíření (např. nové typy zájemců, logování, mobilní notifikace) bez nutnosti měnit kód předmětu.
+### Použitý Návrhový Vzor: Observer (Pozorovatel)
+Aplikace využívá návrhový vzor **Observer** (Behavioral pattern), který definuje závislost jeden-ku-mnoha mezi objekty tak, že změna stavu jednoho objektu vyvolá automatickou notifikaci a aktualizaci všech závislých objektů.
 
-## Použitý návrhový vzor
-
-**Observer (Pozorovatel)**
-
-Tento vzor definuje závislost typu *jeden ku mnoha* (1:N) mezi objekty tak, že změna stavu jednoho objektu (Předmět) vyvolá automatickou aktualizaci všech závislých objektů (Pozorovatelé).
-
-### Implementace
-
-Implementace se skládá ze tří hlavních částí:
-1.  **`IAuctionObserver` (Rozhraní):** Kontrakt, který musí splňovat každý, kdo chce být informován o změně ceny.
-2.  **`AuctionItem` (Subject):** Drží si seznam pozorovatelů a při změně ceny (`Price`) volá metodu `Notify()`, která rozešle informaci všem v seznamu.
-3.  **`Bidder` (Concrete Observer):** Konkrétní implementace zájemce, který na notifikaci reaguje výpisem do konzole.
- 
- 
+**Implementace v projektu:**
+1.  **Subject (Předmět):** Třída `AuctionItem` implementuje rozhraní `ISubject`. Spravuje seznam pozorovatelů a při změně ceny (metoda `Notify`) je informuje.
+2.  **Observer (Pozorovatel):** Třída `Bidder` implementuje rozhraní `IObserver`. Obsahuje metodu `Update`, která reaguje na změnu stavu předmětu.
