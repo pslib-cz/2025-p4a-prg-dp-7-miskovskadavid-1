@@ -1,27 +1,27 @@
-# Aukèní systém - Návrhovı vzor Observer
+# AukÄnÃ­ systÃ©m - NÃ¡vrhovÃ½ vzor Observer
 
-Tento projekt implementuje jádro aukèního systému s vyuitím návrhového vzoru **Observer** (Pozorovatel).
+Tento projekt implementuje jÃ¡dro aukÄnÃ­ho systÃ©mu s vyuÅ¾itÃ­m nÃ¡vrhovÃ©ho vzoru **Observer** (Pozorovatel).
 
-## Proè byl zvolen tento pøístup?
+## ProÄ byl zvolen tento pÅ™Ã­stup?
 
-Zadání vyadovalo, aby pøedmìt aukce (draená vìc) nebyl závislı na konkrétních tøídách zájemcù a aby bylo moné pøidávat nebo odebírat odbìratele notifikací za bìhu bez úpravy kódu pøedmìtu.
+ZadÃ¡nÃ­ vyÅ¾adovalo, aby pÅ™edmÄ›t aukce (draÅ¾enÃ¡ vÄ›c) nebyl zÃ¡vislÃ½ na konkrÃ©tnÃ­ch tÅ™Ã­dÃ¡ch zÃ¡jemcÅ¯ a aby bylo moÅ¾nÃ© pÅ™idÃ¡vat nebo odebÃ­rat odbÄ›ratele notifikacÃ­ za bÄ›hu bez Ãºpravy kÃ³du pÅ™edmÄ›tu.
 
-Tento pøístup byl zvolen z následujících dùvodù:
-- **Volná vazba (Loose Coupling):** Pøedmìt (`AuctionItem`) komunikuje se zájemci pouze pøes obecné rozhraní `IAuctionObserver`. Nezná konkrétní tøídu `Bidder`.
-- **Dynamiènost:** Seznam odbìratelù není fixní. Zájemci se mohou kdykoliv pøihlásit (`Attach`) nebo odhlásit (`Detach`).
-- **Princip OCP (Open/Closed Principle):** Systém je otevøenı pro rozšíøení (napø. nové typy zájemcù, logování, mobilní notifikace) bez nutnosti mìnit kód pøedmìtu.
+Tento pÅ™Ã­stup byl zvolen z nÃ¡sledujÃ­cÃ­ch dÅ¯vodÅ¯:
+- **VolnÃ¡ vazba (Loose Coupling):** PÅ™edmÄ›t (`AuctionItem`) komunikuje se zÃ¡jemci pouze pÅ™es obecnÃ© rozhranÃ­ `IAuctionObserver`. NeznÃ¡ konkrÃ©tnÃ­ tÅ™Ã­du `Bidder`.
+- **DynamiÄnost:** Seznam odbÄ›ratelÅ¯ nenÃ­ fixnÃ­. ZÃ¡jemci se mohou kdykoliv pÅ™ihlÃ¡sit (`Attach`) nebo odhlÃ¡sit (`Detach`).
+- **Princip OCP (Open/Closed Principle):** SystÃ©m je otevÅ™enÃ½ pro rozÅ¡Ã­Å™enÃ­ (napÅ™. novÃ© typy zÃ¡jemcÅ¯, logovÃ¡nÃ­, mobilnÃ­ notifikace) bez nutnosti mÄ›nit kÃ³d pÅ™edmÄ›tu.
 
-## Pouitı návrhovı vzor
+## PouÅ¾itÃ½ nÃ¡vrhovÃ½ vzor
 
 **Observer (Pozorovatel)**
 
-Tento vzor definuje závislost typu *jeden ku mnoha* (1:N) mezi objekty tak, e zmìna stavu jednoho objektu (Pøedmìt) vyvolá automatickou aktualizaci všech závislıch objektù (Pozorovatelé).
+Tento vzor definuje zÃ¡vislost typu *jeden ku mnoha* (1:N) mezi objekty tak, Å¾e zmÄ›na stavu jednoho objektu (PÅ™edmÄ›t) vyvolÃ¡ automatickou aktualizaci vÅ¡ech zÃ¡vislÃ½ch objektÅ¯ (PozorovatelÃ©).
 
 ### Implementace
 
-Implementace se skládá ze tøí hlavních èástí:
-1.  **`IAuctionObserver` (Rozhraní):** Kontrakt, kterı musí splòovat kadı, kdo chce bıt informován o zmìnì ceny.
-2.  **`AuctionItem` (Subject):** Drí si seznam pozorovatelù a pøi zmìnì ceny (`Price`) volá metodu `Notify()`, která rozešle informaci všem v seznamu.
-3.  **`Bidder` (Concrete Observer):** Konkrétní implementace zájemce, kterı na notifikaci reaguje vıpisem do konzole.#   2 0 2 5 - p 4 a - p r g - d p - 7 - m i s k o v s k a d a v i d - 1 
+Implementace se sklÃ¡dÃ¡ ze tÅ™Ã­ hlavnÃ­ch ÄÃ¡stÃ­:
+1.  **`IAuctionObserver` (RozhranÃ­):** Kontrakt, kterÃ½ musÃ­ splÅˆovat kaÅ¾dÃ½, kdo chce bÃ½t informovÃ¡n o zmÄ›nÄ› ceny.
+2.  **`AuctionItem` (Subject):** DrÅ¾Ã­ si seznam pozorovatelÅ¯ a pÅ™i zmÄ›nÄ› ceny (`Price`) volÃ¡ metodu `Notify()`, kterÃ¡ rozeÅ¡le informaci vÅ¡em v seznamu.
+3.  **`Bidder` (Concrete Observer):** KonkrÃ©tnÃ­ implementace zÃ¡jemce, kterÃ½ na notifikaci reaguje vÃ½pisem do konzole.
  
  
