@@ -1,0 +1,15 @@
+C:\Users\marij\source\repos\2025-p4a-prg-dp-7-miskovskadavid-1\ConsoleApp\ConsoleApp\obj\Debug\net10.0\ConsoleApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\marij\source\repos\2025-p4a-prg-dp-7-miskovskadavid-1\ConsoleApp\ConsoleApp\obj\Debug\net10.0\ConsoleApp.AssemblyInfoInputs.cache
+C:\Users\marij\source\repos\2025-p4a-prg-dp-7-miskovskadavid-1\ConsoleApp\ConsoleApp\obj\Debug\net10.0\ConsoleApp.AssemblyInfo.cs
+C:\Users\marij\source\repos\2025-p4a-prg-dp-7-miskovskadavid-1\ConsoleApp\ConsoleApp\obj\Debug\net10.0\ConsoleApp.csproj.CoreCompileInputs.cache
+C:\Users\marij\source\repos\2025-p4a-prg-dp-7-miskovskadavid-1\ConsoleApp\ConsoleApp\obj\Debug\net10.0\ConsoleApp.sourcelink.json
+C:\Users\marij\source\repos\2025-p4a-prg-dp-7-miskovskadavid-1\ConsoleApp\ConsoleApp\bin\Debug\net10.0\ConsoleApp.exe
+C:\Users\marij\source\repos\2025-p4a-prg-dp-7-miskovskadavid-1\ConsoleApp\ConsoleApp\bin\Debug\net10.0\ConsoleApp.deps.json
+C:\Users\marij\source\repos\2025-p4a-prg-dp-7-miskovskadavid-1\ConsoleApp\ConsoleApp\bin\Debug\net10.0\ConsoleApp.runtimeconfig.json
+C:\Users\marij\source\repos\2025-p4a-prg-dp-7-miskovskadavid-1\ConsoleApp\ConsoleApp\bin\Debug\net10.0\ConsoleApp.dll
+C:\Users\marij\source\repos\2025-p4a-prg-dp-7-miskovskadavid-1\ConsoleApp\ConsoleApp\bin\Debug\net10.0\ConsoleApp.pdb
+C:\Users\marij\source\repos\2025-p4a-prg-dp-7-miskovskadavid-1\ConsoleApp\ConsoleApp\obj\Debug\net10.0\ConsoleApp.dll
+C:\Users\marij\source\repos\2025-p4a-prg-dp-7-miskovskadavid-1\ConsoleApp\ConsoleApp\obj\Debug\net10.0\refint\ConsoleApp.dll
+C:\Users\marij\source\repos\2025-p4a-prg-dp-7-miskovskadavid-1\ConsoleApp\ConsoleApp\obj\Debug\net10.0\ConsoleApp.pdb
+C:\Users\marij\source\repos\2025-p4a-prg-dp-7-miskovskadavid-1\ConsoleApp\ConsoleApp\obj\Debug\net10.0\ConsoleApp.genruntimeconfig.cache
+C:\Users\marij\source\repos\2025-p4a-prg-dp-7-miskovskadavid-1\ConsoleApp\ConsoleApp\obj\Debug\net10.0\ref\ConsoleApp.dll
